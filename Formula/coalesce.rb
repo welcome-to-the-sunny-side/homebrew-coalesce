@@ -3,10 +3,10 @@ class Coalesce < Formula
   
     desc "manage your solves"
     homepage "https://github.com/welcome-to-the-sunny-side/coalesce"
-    url      "https://github.com/welcome-to-the-sunny-side/coalesce/archive/refs/tags/v0.1.1.tar.gz"
-    sha256   "6d030a5ac9c25121ad073ec6d8ff623a601aeb30784b1555011418dde109c971"
+    url      "https://github.com/welcome-to-the-sunny-side/coalesce/archive/refs/tags/v0.1.2.tar.gz"
+    sha256   "ccdb386b8cfb4ae09289b7359e6367dfbd71339a58537f354612807330dc3ab1"
     license  "MIT"
-    version  "0.1.1"
+    version  "0.1.2"
     head     "https://github.com/welcome-to-the-sunny-side/coalesce.git", branch: "main"
   
     depends_on "python@3.12"
@@ -31,7 +31,17 @@ class Coalesce < Formula
       url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
       sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
     end
-  
+
+    resource "plotext" do
+      url "https://files.pythonhosted.org/packages/27/d7/58f5ec766e41f8338f04ec47dbd3465db04fbe2a6107bca5f0670ced253a/plotext-5.2.8.tar.gz"
+      sha256 "319a287baabeb8576a711995f973a2eba631c887aa6b0f33ab016f12c50ffebe"
+    end
+
+    resource "rich" do
+      url "https://files.pythonhosted.org/packages/b3/01/c954e134dc440ab5f96952fe52b4fdc64225530320a910473c1fe270d9aa/rich-13.7.1.tar.gz"
+      sha256 "9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
+    end
+
     # --- NEW: requests’ runtime dependencies ----------------------------
     resource "idna" do
       url "https://files.pythonhosted.org/packages/21/ed/f86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07/idna-3.7.tar.gz"
