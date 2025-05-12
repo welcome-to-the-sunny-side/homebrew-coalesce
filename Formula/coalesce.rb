@@ -8,7 +8,6 @@ class Coalesce < Formula
   license "MIT"
 
   depends_on "python@3.9"
-  depends_on "hatchling" => :build
   depends_on "setuptools" => :build
 
   resource "certifi" do
@@ -24,6 +23,11 @@ class Coalesce < Formula
   resource "click" do
     url "https://files.pythonhosted.org/packages/59/87/84326af34517fca8c58418d148f2403df25303e02736832403587318e9e8/click-8.1.3.tar.gz"
     sha256 "7682dc8afb30297001674575ea00d1814d808d6a36af415a82bd481d37ba7b8e"
+  end
+
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/8f/8a/cc1debe3514da292094f1c3a700e4ca25442489731ef7c0814358816bb03/hatchling-1.27.0.tar.gz"
+    sha256 "971c296d9819abb3811112fc52c7a9751c8d381898f36533bb16f9791e941fd6"
   end
 
   resource "idna" do
