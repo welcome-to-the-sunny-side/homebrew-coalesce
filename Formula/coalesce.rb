@@ -3,8 +3,8 @@ class Coalesce < Formula
 
   desc "Track and analyze your Codeforces problem-solving data"
   homepage "https://github.com/welcome-to-the-sunny-side/coalesce"
-  url "https://github.com/welcome-to-the-sunny-side/coalesce/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "841248037144e5e79bb88366c7da90427ba1d7420504893529343993e511433e"
+  url "https://github.com/welcome-to-the-sunny-side/coalesce/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "6d030a5ac9c25121ad073ec6d8ff623a601aeb30784b1555011418dde109c971"
   license "MIT"
 
   depends_on "python@3.9"
