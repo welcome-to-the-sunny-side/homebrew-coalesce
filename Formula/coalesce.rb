@@ -16,16 +16,16 @@ class Coalesce < Formula
 
   def install
     # Create a fully isolated virtual environment in libexec
-    # Note: Using libexec directly instead of libexec/venv for pip_install
     venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
 
+    # Upgrade pip and setuptools within the virtualenv first
+    venv.pip_install_and_link "--upgrade", "pip", "setuptools"
+
     # Install the package from the staged source directory (buildpath)
-    # venv.pip_install implicitly handles ensuring pip/setuptools are present
-    # and installs the package and its dependencies from setup.py
+    # This should now use the upgraded pip/setuptools to fetch dependencies
     venv.pip_install buildpath
 
     # Symlink the executable script from libexec/bin into Homebrew's bin directory
-    # pip_install puts the script directly into libexec/bin
     bin.install_symlink libexec/"bin/coalesce"
   end
 
