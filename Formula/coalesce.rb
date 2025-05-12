@@ -8,6 +8,8 @@ class Coalesce < Formula
   license "MIT"
 
   depends_on "python@3.9"
+  depends_on "hatchling" => :build
+  depends_on "setuptools" => :build
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/71/da/e94e26401b62acd6d91df2b52954aceb7f561743aa5ccc32152886c76c96/certifi-2024.2.2.tar.gz"
@@ -53,4 +55,3 @@ class Coalesce < Formula
                    shell_output("#{bin}/coalesce --help")
     end
   end
-  
