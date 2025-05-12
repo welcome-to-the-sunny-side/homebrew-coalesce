@@ -1,7 +1,7 @@
 class Coalesce < Formula
     include Language::Python::Virtualenv
   
-    desc "Track and analyze your Codeforces problem‑solving data"
+    desc "manage your solves"
     homepage "https://github.com/welcome-to-the-sunny-side/coalesce"
     url      "https://github.com/welcome-to-the-sunny-side/coalesce/archive/refs/tags/v0.1.1.tar.gz"
     sha256   "6d030a5ac9c25121ad073ec6d8ff623a601aeb30784b1555011418dde109c971"
