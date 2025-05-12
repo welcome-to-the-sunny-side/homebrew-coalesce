@@ -8,6 +8,32 @@ class Coalesce < Formula
   license "MIT"
 
   depends_on "python@3.9"
+  
+  # Build dependencies for urllib3 2.4.0
+  resource "hatchling" do
+    url "https://files.pythonhosted.org/packages/ff/13/f0291c4ec595bb91c05392093e9e39d1552af6699567c5ecf53dce546a07/hatchling-1.21.1.tar.gz"
+    sha256 "bba440453a224e7d4478457fa2e8d8c3633765bafa02975a6b53b9bf917980bc"
+  end
+  
+  resource "hatch-vcs" do
+    url "https://files.pythonhosted.org/packages/f5/c9/54bb4bcf8e4d091778d98de5d7a8b0020bb204a3214357fa535e2a07b948/hatch_vcs-0.4.0.tar.gz"
+    sha256 "093810748fe01db0d7e36dd3b603579263a1a35c7980055cfbc519954eb75293"
+  end
+  
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94f0359fd1257fbf/pathspec-0.11.2.tar.gz"
+    sha256 "e0d8d0ac2f12da61956eb2306b69f9469b42f4deb0f3cb6ed47b9cce9996ced3"
+  end
+  
+  resource "pluggy" do
+    url "https://files.pythonhosted.org/packages/36/51/04defc761583568cae5fd533abda3d40164cbdcf22dee5b7126cb68692eb/pluggy-1.3.0.tar.gz"
+    sha256 "cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"
+  end
+  
+  resource "trove-classifiers" do
+    url "https://files.pythonhosted.org/packages/3d/21/303f0917871fe5e0e0fb1ebd55de0f4c99248c5b940f0b0343c7f8de42c1/trove-classifiers-2023.9.19.tar.gz"
+    sha256 "64b5098edf7828a5a44f7cece20b8abd6ce662b4769a349bd288185fa3bd5197"
+  end
 
   resource "certifi" do
     url "https://files.pythonhosted.org/packages/71/da/e94e26401b62acd6d91df2b52954aceb7f561743aa5ccc32152886c76c96/certifi-2024.2.2.tar.gz"
