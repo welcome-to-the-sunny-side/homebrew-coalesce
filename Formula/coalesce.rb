@@ -4,7 +4,7 @@ class Coalesce < Formula
     desc "manage your solves"
     homepage "https://github.com/welcome-to-the-sunny-side/coalesce"
     url      "https://github.com/welcome-to-the-sunny-side/coalesce/archive/refs/tags/v0.1.2.tar.gz"
-    sha256   "f0555e0663955b90304782d2b72bd855d36238030bf2eb4706cff33aee940dbe"
+    sha256   "ccdb386b8cfb4ae09289b7359e6367dfbd71339a58537f354612807330dc3ab1"
     license  "MIT"
     version  "0.1.2"
     head     "https://github.com/welcome-to-the-sunny-side/coalesce.git", branch: "main"
