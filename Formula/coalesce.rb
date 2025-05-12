@@ -19,7 +19,8 @@ class Coalesce < Formula
     venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
 
     # Upgrade pip and setuptools within the virtualenv first
-    venv.pip_install_and_link "--upgrade", "pip", "setuptools"
+    # Pass arguments as a single array
+    venv.pip_install_and_link ["--upgrade", "pip", "setuptools"]
 
     # Install the package from the staged source directory (buildpath)
     # This should now use the upgraded pip/setuptools to fetch dependencies
