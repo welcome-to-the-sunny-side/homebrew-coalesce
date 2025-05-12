@@ -15,19 +15,18 @@ class Coalesce < Formula
   depends_on "python@3.11"
 
   def install
-    # Create a fully isolated virtual environment in libexec/venv
-    venv_dir = libexec/"venv"
-    virtualenv_create(venv_dir, "python3.11", system_site_packages: false)
+    # Create a fully isolated virtual environment in libexec
+    # Note: Using libexec directly instead of libexec/venv for pip_install
+    venv = virtualenv_create(libexec, "python3.11", system_site_packages: false)
 
-    # Change into the build directory (where source is unpacked)
-    chdir buildpath do
-      # Use the virtualenv's python to run setup.py install
-      # This installs the package and dependencies directly into the venv
-      system venv_dir/"bin/python", "setup.py", "install"
-    end
+    # Install the package from the staged source directory (buildpath)
+    # venv.pip_install implicitly handles ensuring pip/setuptools are present
+    # and installs the package and its dependencies from setup.py
+    venv.pip_install buildpath
 
-    # Symlink the executable script from the virtualenv's bin directory
-    bin.install_symlink venv_dir/"bin/coalesce"
+    # Symlink the executable script from libexec/bin into Homebrew's bin directory
+    # pip_install puts the script directly into libexec/bin
+    bin.install_symlink libexec/"bin/coalesce"
   end
 
   test do
