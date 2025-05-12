@@ -13,8 +13,13 @@ class Coalesce < Formula
     # Create a virtual environment in libexec using python 3.11
     venv = virtualenv_create(libexec, "python3.11")
     
+    # Explicitly install dependencies
+    dependencies = %w[click urllib3 requests tabulate]
+    dependencies.each do |dependency|
+      venv.pip_install dependency
+    end
+    
     # Install the package from the current directory (staged source) into the venv
-    # pip will handle downloading dependencies from PyPI
     venv.pip_install "."
     
     # Manually symlink the executable from the venv's bin to Homebrew's bin
